@@ -25,10 +25,7 @@ Text.Text.
 - [Set_A](docs/Set_A.md)
 
 
-<sub>## Autori
-### **Daniel Bačovčin**
-Text.Text.
-
-### **Adam Zabloudil**
-Text.Text.</sub>
-
+## Autori
+>**Daniel Bačovčin** - text text
+>
+>**Adam Zabloudil** - text text
