@@ -24,9 +24,11 @@ Text.Text.
 ## Popis jednotlivých blokov
 - [Set_A](docs/Set_A.md)
 
-## Autori
+
+<sub>## Autori
 ### **Daniel Bačovčin**
 Text.Text.
 
 ### **Adam Zabloudil**
-Text.Text.
+Text.Text.</sub>
+
