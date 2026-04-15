@@ -17,7 +17,7 @@ Text.Text.
 Text.Text.
 
 ## Bloková schéma
-![Scheme](Scheme.webp)
+![Scheme](docs/Scheme.webp)
 
 ## Popis blokovej schémy
 
