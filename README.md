@@ -27,4 +27,5 @@ Text.Text.
 
 >## Autori
 >**Daniel Bačovčin** - pracant 1
+>
 >**Adam Zabloudil** - pracant 2
