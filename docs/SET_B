@@ -1,1 +1,10 @@
+Blok funguje podobne ako SET_A
 
+Vstupy: HH, MM, SS, HH_A, MM_A, SS_A, STAV_TIME, STAV_ALM, SW1, SW2, CLK, RST
+Výstupy: H, M, S 
+
+Blok prijíma 6 bitové vstupy HH MM a SS z hodín alebo z alarmu s indexom _A. na základe switchov analogicky z bloku SET_A priradzuje vstupy 6 bitovým výstupom. 
+zároveň podľa toho, či sa nachádzame v nastavovaní hodín alebo alarmu, vezmeme vstupnú dvojbitovú hodnotu zo STAV_TIME alebo STAV_ALM a podľa nej bude v nastavenom 
+čase napríklad 250ms číslice, ktoré sú aktuálne nastavované podľa STAV_TIME alebo _ALM.
+
+Celý blok bude riadený synchrónnym CLK a RST
