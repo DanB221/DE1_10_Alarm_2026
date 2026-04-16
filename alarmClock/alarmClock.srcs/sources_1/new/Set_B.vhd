@@ -32,31 +32,31 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity Set_B is
-    Port ( HOD_H : in STD_LOGIC_VECTOR (5 downto 0);
-           MIN_H : in STD_LOGIC_VECTOR (5 downto 0);
-           SEC_H : in STD_LOGIC_VECTOR (5 downto 0);
-           HOD_A : in STD_LOGIC_VECTOR (5 downto 0);
-           MIN_A : in STD_LOGIC_VECTOR (5 downto 0);
-           SEC_A : in STD_LOGIC_VECTOR (5 downto 0);
-           HOD   : out STD_LOGIC_VECTOR (5 downto 0);
-           MIN   : out STD_LOGIC_VECTOR (5 downto 0);
-           SEC   : out STD_LOGIC_VECTOR (5 downto 0);
-           SW1   : in STD_LOGIC;
-           SW2   : in STD_LOGIC;
-           SEL_H : in STD_LOGIC_VECTOR (1 downto 0);
-           SEL_A : in STD_LOGIC_VECTOR (1 downto 0));
+    Port ( HH        : in STD_LOGIC_VECTOR (5 downto 0);
+           MM        : in STD_LOGIC_VECTOR (5 downto 0);
+           SS        : in STD_LOGIC_VECTOR (5 downto 0);
+           HH_A      : in STD_LOGIC_VECTOR (5 downto 0);
+           MM_A      : in STD_LOGIC_VECTOR (5 downto 0);
+           SS_A      : in STD_LOGIC_VECTOR (5 downto 0);
+           SW1       : in STD_LOGIC;
+           SW2       : in STD_LOGIC;
+           STAV_TIME : in STD_LOGIC_VECTOR (1 downto 0);
+           STAV_ALM  : in STD_LOGIC_VECTOR (1 downto 0));
+           H         : out STD_LOGIC_VECTOR (5 downto 0);
+           M         : out STD_LOGIC_VECTOR (5 downto 0);
+           S         : out STD_LOGIC_VECTOR (5 downto 0);
 end Set_B;
 
 architecture Behavioral of Set_B is
 
 begin
 
-    HOD_A <= HOD when (SW1 = '1' and SW2 = '0') else '0';
-    MIN_A <= MIN when (SW1 = '1' and SW2 = '0') else '0';
-    SEC_A <= SEC when (SW1 = '1' and SW2 = '0') else '0';
+    H <= HH_A when (SW1 = '1' and SW2 = '0') else '0';
+    M <= MM_A when (SW1 = '1' and SW2 = '0') else '0';
+    S <= SS_A when (SW1 = '1' and SW2 = '0') else '0';
 
-    HOD_H <= HOD when (SW1 = '0' and SW2 = '1') else '0';
-    MIN_H <= MIN when (SW1 = '0' and SW2 = '1') else '0';
-    SEC_H <= SEC when (SW1 = '0' and SW2 = '1') else '0';
+    H <= HH when (SW1 = '0' and SW2 = '1') else '0';
+    M <= MM when (SW1 = '0' and SW2 = '1') else '0';
+    S <= SS when (SW1 = '0' and SW2 = '1') else '0';
 
 end Behavioral;
