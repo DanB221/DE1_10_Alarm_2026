@@ -23,16 +23,10 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 ## Popis blokovej schémy
 
 ## Popis jednotlivých blokov
-|- [DEB](docs/DEB.md) |- [SET_A](docs/SET_A.md) |- [SEL_TIME](docs/SEL_TIME.md)
-- [SEL_ALM](docs/SEL_ALM.md)
-- [TIME](docs/TIME.md)
-- [ALARM](docs/ALARM.md)
-- [clk_en](docs/clk_en.md)
-- [COMP](docs/COMP.md)
-- [SET_B](docs/SET_B.md)
-- [DIV](docs/DIV.md)
-- [SEL](docs/SEL.md)
-- [bin2seg](docs/bin2seg.md)
+| [DEB](docs/DEB.md)   | [SET_A](docs/SET_A.md)   | [SEL_TIME](docs/SEL_TIME.md)
+|[SEL_ALM](docs/SEL_ALM.md)   | [TIME](docs/TIME.md)   | [ALARM](docs/ALARM.md)
+| [clk_en](docs/clk_en.md)   | [COMP](docs/COMP.md)   | [SET_B](docs/SET_B.md)
+| [DIV](docs/DIV.md)   | [SEL](docs/SEL.md)   | [bin2seg](docs/bin2seg.md)
 
 
 >## Autori
