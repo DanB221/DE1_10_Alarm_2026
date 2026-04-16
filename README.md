@@ -1,4 +1,4 @@
-# Projekt z DE1 č.10 ALARM
+# Projekt z DE1
 V rámci výuky predmetu sme si zvolili tému číslo 10 ALARM. 
 
 ## Popis alarmu a funkcionality
