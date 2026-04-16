@@ -1,4 +1,8 @@
 
 v princípe podobný ako na cvičeniach 
 
-Vstupy BTNU, BTNC, BTND a výstupy BTNU_deb, BTNC_deb, BTND_deb
+Vstupy BTNU, BTNC, BTND, CLK a RST
+výstupy BTNU_deb, BTNC_deb, BTND_deb
+
+
+celý blok závislý na synchrónnom CLK a RST
