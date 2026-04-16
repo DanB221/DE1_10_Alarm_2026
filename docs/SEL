@@ -1,1 +1,7 @@
+Vstupy:CLK, RST, digit0, digit1, digit2, digit3, digit4, digit5, digit6, digit7,
+Výstupy: an_seg, seg
 
+Na vstupe dostaneme 4 bitové čísla, ktoré následne pošleme na 4 bitový seg a spolu sním aj kód pre jeho polohu na an_seg 8 bitový. 
+V základe len budeme zaradom prechádzať vstupy istou prekvenciu a budeme ich vysielať na seg a rovnako budeme cykliť an_seg
+
+celý blok bude závislý na synchrónnom CLK a RST
