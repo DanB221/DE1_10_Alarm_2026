@@ -2,14 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity DEB is
+    generic (
+        C_MAX : positive := 200_000 
+    );
     Port ( 
         CLK        : in  STD_LOGIC;
         RST        : in  STD_LOGIC;
-        -- Samostatné vstupy pre tlačidlá
         BTNU       : in  STD_LOGIC;
         BTND       : in  STD_LOGIC;
         BTNC       : in  STD_LOGIC;
-        -- Výstupy s príponou _d
         BTNU_d     : out STD_LOGIC;
         BTND_d     : out STD_LOGIC;
         BTNC_d     : out STD_LOGIC
@@ -18,17 +19,14 @@ end DEB;
 
 architecture Behavioral of DEB is
     ----------------------------------------------------------------
-    -- Constants
+    -- Konštanty (C_MAX odtiaľto zmizla, je v generic)
     ----------------------------------------------------------------
     constant C_SHIFT_LEN : positive := 4;
-    constant C_MAX       : positive := 200_000; -- 2 ms pri 100 MHz
 
     ----------------------------------------------------------------
-    -- Internal signals
+    -- Interné signály
     ----------------------------------------------------------------
     signal ce_sample : std_logic;
-    
-    -- Pomocné vektory pre hromadné spracovanie v procese
     signal btns_in   : std_logic_vector(2 downto 0);
     signal sync0     : std_logic_vector(2 downto 0);
     signal sync1     : std_logic_vector(2 downto 0);
@@ -39,6 +37,7 @@ architecture Behavioral of DEB is
     signal debounced : std_logic_vector(2 downto 0);
     signal delayed   : std_logic_vector(2 downto 0);
 
+    -- Deklarácia komponentu pre clk_en zostáva rovnaká
     component clk_en is
         generic ( G_MAX : positive );
         port (
@@ -49,27 +48,21 @@ architecture Behavioral of DEB is
     end component clk_en;
 
 begin
-    -- Zbalenie samostatných vstupov do vektora pre jednoduchšie spracovanie
     btns_in <= BTNU & BTND & BTNC;
 
-    ----------------------------------------------------------------
-    -- Clock enable instance
-    ----------------------------------------------------------------
     clock_0 : clk_en
-        generic map ( G_MAX => C_MAX )
+        generic map ( G_MAX => C_MAX ) -- Použije hodnotu z generic
         port map (
             CLK => CLK,
             RST => RST,
             ce  => ce_sample
         );
 
-    ----------------------------------------------------------------
-    -- Synchronizer + debounce logic
-    ----------------------------------------------------------------
+    -- Zvyšok logiky (p_debounce a priradenie výstupov) zostáva rovnaký ako predtým...
     p_debounce : process(CLK)
     begin
         if rising_edge(CLK) then
-            if rst = '1' then
+            if RST = '1' then
                 sync0     <= (others => '0');
                 sync1     <= (others => '0');
                 debounced <= (others => '0');
@@ -78,16 +71,12 @@ begin
                     shift_reg(i) <= (others => '0');
                 end loop;
             else
-                -- Synchronizácia
                 sync1 <= sync0;
                 sync0 <= btns_in;
 
                 if ce_sample = '1' then
                     for i in 0 to 2 loop
-                        -- Posuvný register
                         shift_reg(i) <= shift_reg(i)(C_SHIFT_LEN-2 downto 0) & sync1(i);
-
-                        -- Vyhodnotenie (všetky '1' -> log 1, všetky '0' -> log 0)
                         if shift_reg(i) = (shift_reg(i)'range => '1') then
                             debounced(i) <= '1';
                         elsif shift_reg(i) = (shift_reg(i)'range => '0') then
@@ -95,19 +84,11 @@ begin
                         end if;
                     end loop;
                 end if;
-
-                -- Oneskorenie pre detekciu nábežnej hrany (ak by si potreboval btn_press)
                 delayed <= debounced;
             end if;
         end if;
     end process;
 
-    ----------------------------------------------------------------
-    -- Mapovanie vektorov späť na samostatné výstupy _d
-    ----------------------------------------------------------------
-    -- Tu generujeme impulz (stlačenie), ak chceš len vyčistený stav, 
-    -- zmeň to na: BTNU_d <= debounced(2); atď.
-    
     BTNU_d <= debounced(2) and not(delayed(2));
     BTND_d <= debounced(1) and not(delayed(1));
     BTNC_d <= debounced(0) and not(delayed(0));
