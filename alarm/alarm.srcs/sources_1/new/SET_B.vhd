@@ -1,0 +1,60 @@
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity SET_B is
+    port (
+        SW1       : in  std_logic;
+        SW2       : in  std_logic;
+
+        STAV_TIME : in  std_logic_vector(1 downto 0);
+        STAV_ALM  : in  std_logic_vector(1 downto 0);
+
+        HH        : in  std_logic_vector(5 downto 0);
+        MM        : in  std_logic_vector(5 downto 0);
+        SS        : in  std_logic_vector(5 downto 0);
+
+        HH_A      : in  std_logic_vector(5 downto 0);
+        MM_A      : in  std_logic_vector(5 downto 0);
+        SS_A      : in  std_logic_vector(5 downto 0);
+
+        STAV      : out std_logic_vector(1 downto 0);
+        H         : out std_logic_vector(5 downto 0);
+        M         : out std_logic_vector(5 downto 0);
+        S         : out std_logic_vector(5 downto 0)
+    );
+end entity SET_B;
+
+architecture Behavioral of SET_B is
+begin
+
+    process(SW1, SW2, STAV_TIME, STAV_ALM, HH, MM, SS, HH_A, MM_A, SS_A)
+    begin
+        -- default
+        H    <= HH;
+        M    <= MM;
+        S    <= SS;
+        STAV <= "00";
+
+        if (SW1 = '1' and SW2 = '0') then
+            H <= HH_A;
+            M <= MM_A;
+            S <= SS_A;
+        else
+            H <= HH;
+            M <= MM;
+            S <= SS;
+        end if;
+
+        -- stav
+        if (SW1 = '1' and SW2 = '0') then
+            STAV <= STAV_ALM;
+        elsif (SW1 = '0' and SW2 = '1') then
+            STAV <= STAV_TIME;
+        else
+            STAV <= "00";
+        end if;
+    end process;
+
+end architecture Behavioral;
