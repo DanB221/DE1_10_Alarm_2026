@@ -1,0 +1,101 @@
+-- Testbench automatically generated online
+-- at https://vhdl.lapinoo.net
+-- Generation date : Thu, 23 Apr 2026 12:06:20 GMT
+-- Request id : cfwk-fed377c2-69ea0b3c6e21b
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity tb_TIME is
+end tb_TIME;
+
+architecture tb of tb_TIME is
+
+    component TIME
+        port (CLK    : in std_logic;
+              RST    : in std_logic;
+              clk_en : in std_logic;
+              BTNU_H : in std_logic;
+              BTND_H : in std_logic;
+              BTNU_M : in std_logic;
+              BTND_M : in std_logic;
+              BTNU_S : in std_logic;
+              BTND_S : in std_logic;
+              HH     : out std_logic_vector (5 downto 0);
+              MM     : out std_logic_vector (5 downto 0);
+              SS     : out std_logic_vector (5 downto 0));
+    end component;
+
+    signal CLK    : std_logic;
+    signal RST    : std_logic;
+    signal clk_en : std_logic;
+    signal BTNU_H : std_logic;
+    signal BTND_H : std_logic;
+    signal BTNU_M : std_logic;
+    signal BTND_M : std_logic;
+    signal BTNU_S : std_logic;
+    signal BTND_S : std_logic;
+    signal HH     : std_logic_vector (5 downto 0);
+    signal MM     : std_logic_vector (5 downto 0);
+    signal SS     : std_logic_vector (5 downto 0);
+
+    constant TbPeriod : time := 1000 ns; -- ***EDIT*** Put right period here
+    signal TbClock : std_logic := '0';
+    signal TbSimEnded : std_logic := '0';
+
+begin
+
+    dut : TIME
+    port map (CLK    => CLK,
+              RST    => RST,
+              clk_en => clk_en,
+              BTNU_H => BTNU_H,
+              BTND_H => BTND_H,
+              BTNU_M => BTNU_M,
+              BTND_M => BTND_M,
+              BTNU_S => BTNU_S,
+              BTND_S => BTND_S,
+              HH     => HH,
+              MM     => MM,
+              SS     => SS);
+
+    -- Clock generation
+    TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
+
+    -- ***EDIT*** Check that CLK is really your main clock signal
+    CLK <= TbClock;
+
+    stimuli : process
+    begin
+        -- ***EDIT*** Adapt initialization as needed
+        clk_en <= '0';
+        BTNU_H <= '0';
+        BTND_H <= '0';
+        BTNU_M <= '0';
+        BTND_M <= '0';
+        BTNU_S <= '0';
+        BTND_S <= '0';
+
+        -- Reset generation
+        -- ***EDIT*** Check that RST is really your reset signal
+        RST <= '1';
+        wait for 100 ns;
+        RST <= '0';
+        wait for 100 ns;
+
+        -- ***EDIT*** Add stimuli here
+        wait for 100 * TbPeriod;
+
+        -- Stop the clock and hence terminate the simulation
+        TbSimEnded <= '1';
+        wait;
+    end process;
+
+end tb;
+
+-- Configuration block below is required by some simulators. Usually no need to edit.
+
+configuration cfg_tb_TIME of tb_TIME is
+    for tb
+    end for;
+end cfg_tb_TIME;
