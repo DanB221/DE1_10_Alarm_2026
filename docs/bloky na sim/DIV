@@ -1,1 +1,49 @@
 
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity DIV is
+    port (
+        H      : in  std_logic_vector(5 downto 0);
+        M      : in  std_logic_vector(5 downto 0);
+        S      : in  std_logic_vector(5 downto 0);
+        OF     : in  std_logic_vector(3 downto 0);
+
+        digit0 : out std_logic_vector(3 downto 0);
+        digit1 : out std_logic_vector(3 downto 0);
+        digit2 : out std_logic_vector(3 downto 0);
+        digit3 : out std_logic_vector(3 downto 0);
+        digit4 : out std_logic_vector(3 downto 0);
+        digit5 : out std_logic_vector(3 downto 0);
+        digit6 : out std_logic_vector(3 downto 0);
+        digit7 : out std_logic_vector(3 downto 0)
+    );
+end entity DIV;
+
+architecture Behavioral of DIV is
+    signal h_int : integer range 0 to 63;
+    signal m_int : integer range 0 to 63;
+    signal s_int : integer range 0 to 63;
+begin
+
+    h_int <= to_integer(unsigned(H));
+    m_int <= to_integer(unsigned(M));
+    s_int <= to_integer(unsigned(S));
+
+    -- Hodiny
+    digit0 <= std_logic_vector(to_unsigned(h_int / 10, 4));
+    digit1 <= std_logic_vector(to_unsigned(h_int mod 10, 4));
+
+    -- Minúty
+    digit2 <= std_logic_vector(to_unsigned(m_int / 10, 4));
+    digit3 <= std_logic_vector(to_unsigned(m_int mod 10, 4));
+
+    -- Sekundy
+    digit4 <= std_logic_vector(to_unsigned(s_int / 10, 4));
+    digit5 <= std_logic_vector(to_unsigned(s_int mod 10, 4));
+
+    digit6 <= "1010";
+    digit7 <= OF;
+
+end architecture Behavioral;
