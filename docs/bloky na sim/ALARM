@@ -22,7 +22,7 @@ end entity ALARM;
 
 architecture Behavioral of ALARM is
 
-    signal hh_reg : unsigned(5 downto 0) := (others => '0');
+    signal hh_reg : unsigned(5 downto 0) := to_unsigned(23, 6);
     signal mm_reg : unsigned(5 downto 0) := (others => '0');
     signal ss_reg : unsigned(5 downto 0) := (others => '0');
 
@@ -32,13 +32,10 @@ begin
     begin
         if rising_edge(CLK) then
             if RST = '1' then
-                hh_reg <= (others => '0');
+                hh_reg <= to_unsigned(23, 6);
                 mm_reg <= (others => '0');
                 ss_reg <= (others => '0');
 
-            ----------------------------------------------------------------
-            -- Ručné nastavovanie hodín alarmu
-            ----------------------------------------------------------------
             elsif BTNU_H = '1' then
                 if hh_reg = 23 then
                     hh_reg <= (others => '0');
@@ -53,9 +50,6 @@ begin
                     hh_reg <= hh_reg - 1;
                 end if;
 
-            ----------------------------------------------------------------
-            -- Ručné nastavovanie minút alarmu
-            ----------------------------------------------------------------
             elsif BTNU_M = '1' then
                 if mm_reg = 59 then
                     mm_reg <= (others => '0');
@@ -70,9 +64,6 @@ begin
                     mm_reg <= mm_reg - 1;
                 end if;
 
-            ----------------------------------------------------------------
-            -- Ručné nastavovanie sekúnd alarmu
-            ----------------------------------------------------------------
             elsif BTNU_S = '1' then
                 if ss_reg = 59 then
                     ss_reg <= (others => '0');
