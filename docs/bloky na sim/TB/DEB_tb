@@ -12,7 +12,7 @@ architecture test of tb_DEB is
     
     -- Signály pre prepojenie s komponentom
     signal s_clk     : std_logic := '0';
-    signal s_rst     : std_logic := '0';
+    signal s_rst     : std_logic := '1'; -- Začíname v resete
     signal s_BTNU    : std_logic := '0';
     signal s_BTND    : std_logic := '0';
     signal s_BTNC    : std_logic := '0';
@@ -22,11 +22,10 @@ architecture test of tb_DEB is
 
 begin
 
-    -- Inštancia testovaného bloku (UUT - Unit Under Test)
-    -- V simulácii prepíšeme C_MAX na menšiu hodnotu, aby sme nečakali milióny taktov
+    -- Inštancia testovaného bloku (UUT)
     uut: entity work.DEB
         generic map (
-            C_MAX => 10 -- Pre simuláciu stačí 10 taktov namiesto 200 000
+            C_MAX => 4 -- EXTRÉMNE DÔLEŽITÉ: Pre simuláciu nastavujeme malý čítač
         )
         port map (
             CLK    => s_clk,
@@ -39,65 +38,61 @@ begin
             BTNC_d => s_BTNC_d
         );
 
-    -- Generátor hodín
-    p_clk_gen : process
-    begin
-        while now < 1000 ns loop
-            s_clk <= '0';
-            wait for CLK_PERIOD / 2;
-            s_clk <= '1';
-            wait for CLK_PERIOD / 2;
-        end loop;
-        wait;
-    end process;
+    -- Generátor hodín (100 MHz)
+    s_clk <= not s_clk after CLK_PERIOD / 2;
 
-    -- Stimulus proces (testovacie scenáre)
+    -- Stimulus proces
     p_stimulus : process
     begin
-        -- 1. Reset systému
+        -- 1. Reset fáza
         s_rst <= '1';
-        wait for 25 ns;
+        wait for 45 ns;
         s_rst <= '0';
         wait for 20 ns;
 
         ------------------------------------------------------------
-        -- TEST 1: BTNU - Simulácia čistého stlačenia (bez zákmitov)
+        -- SCENÁR 1: BTNU - Rýchle zákmity (Debouncer ich musí ignorovať)
         ------------------------------------------------------------
-        report "Test 1: Ciste stlacenie BTNU";
-        s_BTNU <= '1';
-        wait for 200 ns; -- Čakáme dosť dlho na prechod cez shift register
-        s_BTNU <= '0';
-        wait for 100 ns;
-
-        ------------------------------------------------------------
-        -- TEST 2: BTND - Simulácia reálneho tlačidla so zákmitmi
-        ------------------------------------------------------------
-        report "Test 2: BTND so zakmitmi";
-        -- Zákmity pri stlačení
-        s_BTND <= '1'; wait for 15 ns;
-        s_BTND <= '0'; wait for 10 ns;
-        s_BTND <= '1'; wait for 20 ns;
-        s_BTND <= '0'; wait for 15 ns;
-        s_BTND <= '1'; -- Definitívne stlačenie
-        wait for 250 ns;
+        -- Stláčame BTNU, ale signál kmitá príliš rýchlo
+        s_BTNU <= '1'; wait for 20 ns; 
+        s_BTNU <= '0'; wait for 20 ns;
+        s_BTNU <= '1'; wait for 30 ns;
+        s_BTNU <= '0'; wait for 50 ns;
+        -- Výsledok: s_BTNU_d by mal zostať na '0'
         
-        -- Zákmity pri uvoľnení
-        s_BTND <= '0'; wait for 10 ns;
-        s_BTND <= '1'; wait for 15 ns;
-        s_BTND <= '0'; 
-        wait for 100 ns;
+        ------------------------------------------------------------
+        -- SCENÁR 2: BTND - Platné stlačenie a uvoľnenie
+        ------------------------------------------------------------
+        -- Stlačenie (signál držíme dlho)
+        s_BTND <= '1'; 
+        wait for 300 ns; -- Dosť času na naplnenie shift registra (4 * C_MAX taktov)
+        
+        -- Uvoľnenie
+        s_BTND <= '0';
+        wait for 200 ns;
 
         ------------------------------------------------------------
-        -- TEST 3: BTNC - Veľmi krátky impulz (rušenie), ktorý sa musí ignorovať
+        -- SCENÁR 3: BTNC - Súbežné stlačenie s BTNU
         ------------------------------------------------------------
-        report "Test 3: Kratke rusenie na BTNC (musi byt ignorovane)";
+        s_BTNU <= '1';
         s_BTNC <= '1';
-        wait for 30 ns; -- Kratšie ako debouncing čas (C_MAX * C_SHIFT_LEN)
+        wait for 400 ns;
+        s_BTNU <= '0';
         s_BTNC <= '0';
-        wait for 100 ns;
 
-        report "Simulacia ukoncena";
+        ------------------------------------------------------------
+        -- SCENÁR 4: Reset počas stlačenia
+        ------------------------------------------------------------
+        s_BTND <= '1';
+        wait for 200 ns;
+        s_rst  <= '1'; -- Aktivujeme reset uprostred práce
+        wait for 100 ns;
+        s_rst  <= '0';
+        s_BTND <= '0';
+
+        wait for 200 ns;
+        report "Simulacia uspesne dokoncena";
         wait;
     end process;
 
-end test;
+end architecture;
