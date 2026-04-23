@@ -1,0 +1,103 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tb_DEB is
+-- Testbench nemá porty
+end tb_DEB;
+
+architecture test of tb_DEB is
+
+    -- Konštanty pre simuláciu
+    constant CLK_PERIOD : time := 10 ns; -- 100 MHz
+    
+    -- Signály pre prepojenie s komponentom
+    signal s_clk     : std_logic := '0';
+    signal s_rst     : std_logic := '0';
+    signal s_BTNU    : std_logic := '0';
+    signal s_BTND    : std_logic := '0';
+    signal s_BTNC    : std_logic := '0';
+    signal s_BTNU_d  : std_logic;
+    signal s_BTND_d  : std_logic;
+    signal s_BTNC_d  : std_logic;
+
+begin
+
+    -- Inštancia testovaného bloku (UUT - Unit Under Test)
+    -- V simulácii prepíšeme C_MAX na menšiu hodnotu, aby sme nečakali milióny taktov
+    uut: entity work.DEB
+        generic map (
+            C_MAX => 10 -- Pre simuláciu stačí 10 taktov namiesto 200 000
+        )
+        port map (
+            CLK    => s_clk,
+            RST    => s_rst,
+            BTNU   => s_BTNU,
+            BTND   => s_BTND,
+            BTNC   => s_BTNC,
+            BTNU_d => s_BTNU_d,
+            BTND_d => s_BTND_d,
+            BTNC_d => s_BTNC_d
+        );
+
+    -- Generátor hodín
+    p_clk_gen : process
+    begin
+        while now < 1000 ns loop
+            s_clk <= '0';
+            wait for CLK_PERIOD / 2;
+            s_clk <= '1';
+            wait for CLK_PERIOD / 2;
+        end loop;
+        wait;
+    end process;
+
+    -- Stimulus proces (testovacie scenáre)
+    p_stimulus : process
+    begin
+        -- 1. Reset systému
+        s_rst <= '1';
+        wait for 25 ns;
+        s_rst <= '0';
+        wait for 20 ns;
+
+        ------------------------------------------------------------
+        -- TEST 1: BTNU - Simulácia čistého stlačenia (bez zákmitov)
+        ------------------------------------------------------------
+        report "Test 1: Ciste stlacenie BTNU";
+        s_BTNU <= '1';
+        wait for 200 ns; -- Čakáme dosť dlho na prechod cez shift register
+        s_BTNU <= '0';
+        wait for 100 ns;
+
+        ------------------------------------------------------------
+        -- TEST 2: BTND - Simulácia reálneho tlačidla so zákmitmi
+        ------------------------------------------------------------
+        report "Test 2: BTND so zakmitmi";
+        -- Zákmity pri stlačení
+        s_BTND <= '1'; wait for 15 ns;
+        s_BTND <= '0'; wait for 10 ns;
+        s_BTND <= '1'; wait for 20 ns;
+        s_BTND <= '0'; wait for 15 ns;
+        s_BTND <= '1'; -- Definitívne stlačenie
+        wait for 250 ns;
+        
+        -- Zákmity pri uvoľnení
+        s_BTND <= '0'; wait for 10 ns;
+        s_BTND <= '1'; wait for 15 ns;
+        s_BTND <= '0'; 
+        wait for 100 ns;
+
+        ------------------------------------------------------------
+        -- TEST 3: BTNC - Veľmi krátky impulz (rušenie), ktorý sa musí ignorovať
+        ------------------------------------------------------------
+        report "Test 3: Kratke rusenie na BTNC (musi byt ignorovane)";
+        s_BTNC <= '1';
+        wait for 30 ns; -- Kratšie ako debouncing čas (C_MAX * C_SHIFT_LEN)
+        s_BTNC <= '0';
+        wait for 100 ns;
+
+        report "Simulacia ukoncena";
+        wait;
+    end process;
+
+end test;
