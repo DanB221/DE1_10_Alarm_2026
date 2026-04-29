@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity TIME is
+entity CLOCK_TIME is
     port (
         CLK    : in  std_logic;
         RST    : in  std_logic;
@@ -19,9 +19,9 @@ entity TIME is
         MM     : out std_logic_vector(5 downto 0);
         SS     : out std_logic_vector(5 downto 0)
     );
-end entity TIME;
+end entity CLOCK_TIME;
 
-architecture Behavioral of TIME is
+architecture Behavioral of CLOCK_TIME is
 
     signal hh_reg : unsigned(5 downto 0) := (others => '0');
     signal mm_reg : unsigned(5 downto 0) := (others => '0');
