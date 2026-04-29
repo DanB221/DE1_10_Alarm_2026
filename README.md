@@ -18,7 +18,7 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 
 
 ## Bloková schéma
-![Scheme](docs/IMG_1717.jpeg)
+![Scheme](docs/Schema_v4.jpeg)
 
 ## Popis blokovej schémy
 
