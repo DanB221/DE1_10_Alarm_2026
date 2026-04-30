@@ -28,6 +28,6 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 
 
 >## Autori
->**Daniel Bačovčin** - návrh, top_level
+>**Daniel Bačovčin** - návrh, top level, GitHub, práca na jednotlivých blokoch
 >
->**Adam Zabloudil** - simulácie
+>**Adam Zabloudil** - simulácie, poster, práca na jednotlivých blokoch
