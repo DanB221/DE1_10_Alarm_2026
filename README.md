@@ -18,7 +18,7 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 
 
 ## Bloková schéma
-![Scheme](docs/Schema_v4.jpeg)
+![Scheme](docs/Schema_v5.jpeg)
 
 ## Popis blokovej schémy
 
@@ -28,6 +28,6 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 
 
 >## Autori
->**Daniel Bačovčin** - 
+>**Daniel Bačovčin** - návrh, top_level
 >
->**Adam Zabloudil** - 
+>**Adam Zabloudil** - simulácie
