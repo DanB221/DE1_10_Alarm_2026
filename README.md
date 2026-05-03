@@ -24,22 +24,22 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 Bloková schéma respektíve top level odsahuje následné vstupy a výstupy.
 
 | Vstup | Signál | Popis |
-|---|---|---|
-| BTNU | BTNU | |
-| BTND | BTND | |
-| BTNC | BTNC | |
-| BTNR | RST | |
-| SW0 | SW0 | |
-| SW1 | SW1 | |
-| SW2 | SW2 | |
-|  | CLK | |
+|---    |---     |---|
+| BTNU  | BTNU   | |
+| BTND  | BTND   | |
+| BTNC  | BTNC   | |
+| BTNR  | RST    | |
+| SW0   | SW0    | |
+| SW1   | SW1    | |
+| SW2   | SW2    | |
+| E3    | CLK    | |
 
 | Výstup | Signál | Popis |
-|---|---|---|
-|  | BUZZ | |
-|  | LED | |
-|  | SEG | |
-|  | AN | |
+|---     |---     |---|
+| JA3    | BUZZ   | |
+| LED[0] | LED    | |
+| SEG[*] | SEG    | |
+| AN[*]  | AN     | |
 
 
 
