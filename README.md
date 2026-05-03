@@ -22,6 +22,7 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 
 ## Popis blokovej schémy
 Bloková schéma respektíve top level odsahuje následné vstupy a výstupy.
+
 | Vstup | Signál | Popis |
 |---|---|
 | BTNU | BTNU | |
