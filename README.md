@@ -35,6 +35,7 @@ Bloková schéma respektíve top level odsahuje následné vstupy a výstupy.
 |  | CLK | |
 
 | Výstup | Signál | Popis |
+|---|---|---|
 |  | BUZZ | |
 |  | LED | |
 |  | SEG | |
