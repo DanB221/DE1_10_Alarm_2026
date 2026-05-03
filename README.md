@@ -33,13 +33,13 @@ Bloková schéma respektíve top level odsahuje následné vstupy a výstupy.
 | SW1 | SW1 | |
 | SW2 | SW2 | |
 |  | CLK | |
-|  |  | |
-|  |  | |
-|  |  | |
-|  |  | |
-|  |  | |
-|  |  | |
-|  |  | |
+
+| Výstup | Signál | Popis |
+|  | BUZZ | |
+|  | LED | |
+|  | SEG | |
+|  | AN | |
+
 
 
 ## Popis jednotlivých blokov
