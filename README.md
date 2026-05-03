@@ -21,6 +21,25 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 ![Scheme](docs/Schema_v5.jpeg)
 
 ## Popis blokovej schémy
+Bloková schéma respektíve top level odsahuje následné vstupy a výstupy.
+| Vstup | Signál | Popis |
+|---|---|
+| BTNU | BTNU | |
+| BTND | BTND | |
+| BTNC | BTNC | |
+| BTNR | RST | |
+| SW0 | SW0 | |
+| SW1 | SW1 | |
+| SW2 | SW2 | |
+|  | CLK | |
+|  |  | |
+|  |  | |
+|  |  | |
+|  |  | |
+|  |  | |
+|  |  | |
+|  |  | |
+
 
 ## Popis jednotlivých blokov
 | [DEB](docs/DEB)   | [SET_A](docs/SET_A)   | [SEL_TIME](docs/SEL_TIME)   |[SEL_ALM](docs/SEL_ALM)   | [TIME](docs/TIME)   | [ALARM](docs/ALARM)
