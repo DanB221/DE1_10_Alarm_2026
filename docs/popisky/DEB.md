@@ -4,10 +4,7 @@
 | Výstupy | BTNU_d | BTND_d | BTNC_d |  |  | 
 
 
-v princípe podobný ako na cvičeniach 
-
-Vstupy BTNU, BTNC, BTND, CLK a RST
-výstupy BTNU_deb, BTNC_deb, BTND_deb
-
-
-celý blok závislý na synchrónnom CLK a RST
+### **Odkazy**
+[VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/DEB.vhd) |
+[Testbench]() | 
+[Simulácia]() 
