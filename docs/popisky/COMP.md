@@ -4,7 +4,7 @@
 | Výstupy | STAV[3:0] | LED | BUZZ |  |  |  |  |  |  |  |
 
 ### **Popis**
-Blok COMP je hlavný riadiaci blok funkcie budíka. Porovnáva aktuálny čas zo vstupov HT, MT, ST s časom nastaveným pre alarm zo vstupov HA, MA, SA. Zapína sa vstupom SW0. Stav zapnutia alebo vypnutia signalizuje výstupom STAV. Ak sa časy vstupov vyrovnajú, začne vysielať signál výstupom BUZZ. Ak v stave vysielanie príde signál z BTNC, signál z BUZZ sa pošle na LED. Ten trvá len počas nastavených 15 sekúnd, po tejto dobre sa znova spustí BUZZ a vypne LED. STav aktívneho budenia trvá do vynulovania SW0. Pri následnom zapnutí blok opäť čaká na vyrovnanie vstupnách časov.
+Blok COMP je hlavný riadiaci blok funkcie budíka. Porovnáva aktuálny čas zo vstupov HT, MT, ST s časom nastaveným pre alarm zo vstupov HA, MA, SA. Zapína sa vstupom SW0. Stav zapnutia alebo vypnutia signalizuje výstupom STAV. Ak sa časy vstupov vyrovnajú, začne vysielať signál výstupom BUZZ. Ak v stave vysielanie príde signál z BTNC, signál z BUZZ sa pošle na LED. Ten trvá len počas nastavených 15 sekúnd, po tejto dobre sa znova spustí BUZZ a vypne LED. Stav aktívneho budenia trvá do vynulovania SW0. Pri následnom zapnutí blok opäť čaká na vyrovnanie vstupných časov.
 Celý blok je navrhnutý ako synchronný sekvenčný obvod riadený hlavným hodinovým signálom CLK a synchrónnym resetom RST.
 
 ### **Odkazy**
