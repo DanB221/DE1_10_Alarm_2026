@@ -2,3 +2,9 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | Vstupy | CLK | RST | SW0 | BTNC | HT[5:0] | MT[5:0] | ST[5:0] | HA[5:0] | MA[5:0] | SA[5:0] |
 | Výstupy | STAV[3:0] | LED | BUZZ |  |  |  |  |  |  |  |
+
+
+### **Odkazy**
+[VHDL kód](Alarm/Alarm.srcs/sources_1/new/COMP.vhd) |
+[Testbench]() | 
+[Simulácia]() 
