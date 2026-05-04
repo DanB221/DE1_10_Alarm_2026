@@ -44,8 +44,10 @@ Bloková schéma respektíve top level obsahuje nasledujúce vstupy, výstupy a 
 
 
 ## Popis jednotlivých blokov
-| [DEB](docs/DEB.md)   | [SET_A](docs/SET_A.md)   | [SEL_TIME](docs/SEL_TIME.md)   |[SEL_ALM](docs/SEL_ALM.md)   | [TIME](docs/TIME.md)   | [ALARM](docs/ALARM.md)
-| [clk_en](docs/clk_en.md)   | [COMP](docs/COMP.md)   | [SET_B](docs/SET_B.md)   | [DIV](docs/DIV.md)   | [SEL](docs/SEL.md)   | [bin2seg](docs/bin2seg.md) | [driver](docs/driver.md) |
+| [DEB](docs/popisky/DEB.md)      | [SET_A](docs/popisky/SET_A.md) | [SEL_TIME](docs/popisky/SEL_TIME.md) | [SEL_ALM](docs/popisky/SEL_ALM.md) 
+| [TIME](docs/popisky/TIME.md)    | [ALARM](docs/popisky/ALARM.md) | [clk_en](docs/popisky/clk_en.md)     | [COMP](docs/popisky/COMP.md) 
+| [SET_B](docs/popisky/SET_B.md)  | [DIV](docs/popisky/DIV.md)     | [SEL](docs/popisky/SEL.md)           | [bin2seg](docs/popisky/bin2seg.md) 
+| [driver](docs/popisky/driver.md)|
 
 
 >## Autori
