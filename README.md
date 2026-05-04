@@ -45,7 +45,7 @@ Bloková schéma respektíve top level obsahuje nasledujúce vstupy, výstupy a 
 
 ## Popis jednotlivých blokov
 | [DEB](docs/DEB)   | [SET_A](docs/SET_A)   | [SEL_TIME](docs/SEL_TIME)   |[SEL_ALM](docs/SEL_ALM)   | [TIME](docs/TIME)   | [ALARM](docs/ALARM)
-| [clk_en](docs/clk_en)   | [COMP](docs/COMP)   | [SET_B](docs/SET_B)   | [DIV](docs/DIV)   | [SEL](docs/SEL)   | [bin2seg](docs/bin2seg)
+| [clk_en](docs/clk_en)   | [COMP](docs/COMP)   | [SET_B](docs/SET_B)   | [DIV](docs/DIV)   | [SEL](docs/SEL)   | [bin2seg](docs/bin2seg) | [driver](docs/driver)
 
 
 >## Autori
