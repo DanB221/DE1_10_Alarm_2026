@@ -3,8 +3,9 @@
 | Vstupy | CLK | RST | BTNU | BTND | BTNC |  |  |  
 | Výstupy | BTNU_H | BTND_H | BTNU_M | BTND_M | BTNU_S | BTND_S | STAV[1:0] | 
 
-Daný blok priradí vstupy na príslučné H/M alebo S výstupy na základe stlačenie BTN_C. Takže defaultne bude stav na H(hodinách)(00), stlčením BTNC sa posunie 
-stav na (01) a výstup bude na M (minútach)
-Stav v ktorom sa aktuálne bude blok nachádzať, t.j. kam bude vstupy posielať sa bude zovrazovať na premennej STAV, ktorá je dvojitová.
-Celý blok bude riadený synchrónnym CLK a RST
+
+### **Odkazy**
+[VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/SEL_TIME.vhd) |
+[Testbench]() | 
+[Simulácia]() 
 
