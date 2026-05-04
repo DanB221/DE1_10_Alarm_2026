@@ -1,17 +1,2 @@
-| Vstupy | Výstupy | Počet bitov |
-|---|---|---|
-| CLK |  | 1 |
-| RST |  | 1 |
-| SW0 |  | 1 |
-| BTNC |  | 1 |
-| HT |  | 6 |
-| MT |  | 6 |
-| ST |  | 6 |
-| HA |  | 6 |
-| MA |  | 6 |
-| SA |  | 6 |
-|  | STAV | 4 |
-|  | LED | 1 |
-|  | BUZZ | 1 |
-
-
+| Vstupy | CLK | RST | SW0 | BTNC | HT[5:0] | MT[5:0] | ST[5:0] | HA[5:0] | MA[5:0] | SA[5:0] |
+| Výstupy | STAV[3:0] | LED | BUZZ |  |  |  |  |  |  |  |
