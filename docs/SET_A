@@ -1,7 +1,7 @@
-|  |  |  |  |  |  |  |  |  
-|---|---|---|---|---|---|---|---|
-| Vstupy | BTNU | BTND | BTNC | SW1 | SW2 |  |  | 
-| Výstupy | BTNC_C | BTNU_H | BTND_H | BTNC_H | BTNU_A | BTND_A | BTNC_A |  
+|  |  |  |  |  |  |  |  |  |  |  |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Vstupy | BTNU | BTND | BTNC | SW1 | SW2 |  |  |  |  |  |
+| Výstupy | BTNC_C | BTNU_H | BTND_H | BTNC_H | BTNU_A | BTND_A | BTNC_A |  |  |  |
 
 Na základe vstupu zo SW1 a SW2 sa priradia vstupné BTN k výstupným
 
