@@ -14,7 +14,7 @@ Nastavenie hodín sa spúšťa prepínačom 2. Počas nastavovania bliká dané 
 Nastavenie alarmu je analogické s nastavením hodín. Spúšťa sa prepínačom 1. a alarm sa zapína prepínačom 0.
 
 ### **3. Posunutie alarmu**
-Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minút (pre účely ukážky sme nastavili čas posunutia budenia na 15 sekúnd) pomocou stlačenie stredného tlačidla. Pačas odloženia budenia sa rozsvieti LED k indikácii stavu, že budík je zapnutý ale iba "odložený". Úplné vypnutie nasleduje až po vypnutí prepínača 0.
+Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minút (pre účely ukážky sme nastavili čas posunutia budenia na 15 sekúnd) pomocou stlačenia stredného tlačidla. Počas odloženia budenia sa rozsvieti LED k indikácii stavu, že budík je zapnutý ale iba "odložený". Úplné vypnutie nasleduje až po vypnutí prepínača 0.
 
 
 ## Bloková schéma
@@ -36,10 +36,10 @@ Bloková schéma respektíve top level obsahuje nasledujúce vstupy, výstupy a 
 
 | Výstup | Signál | Popis |
 |---     |---     |---|
-| JA3    | BUZZ   | |
-| LED[0] | LED    | |
-| SEG[*] | SEG    | |
-| AN[*]  | AN     | |
+| JA3    | BUZZ   | Signál sa prepája cez Pmod, konkrétne výstup JA3 a GND na pasívny bzučiak.|
+| LED[0] | LED    | Signál rozsvecuje LED 0 nad SW0|
+| SEG[*] | SEG    | Signál rozsvecuje číslice prípadne písmená na 7 segmentovke|
+| AN[*]  | AN     | Signál postupne pripája jednotlivé anódy 7 segmentoviek tak, aby bol obraz pre ľudské oko stabilný|
 
 
 
