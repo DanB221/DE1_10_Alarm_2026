@@ -30,8 +30,8 @@ Bloková schéma respektíve top level obsahuje nasledujúce vstupy, výstupy a 
 | BTNC  | BTNC   | Tlačidlo BTNC respektíve "stred" sa využíva pre odloženie pípania v bloku COMP za podmienky, že pípanie začalo|
 | BTNR  | RST    | Tlačidlo BTNR respektíve "vpravo" sa využíva pre centrálny reset zapojenia| 
 | SW0   | SW0    | Prepínač SW0 sa využíva pre blok COMP a zapína budík respektíve porovnávanie hodnôt počítadiel medzi blokmi TIME a ALARM|
-| SW1   | SW1    | Prepínač SW1 využívajú bloky SET_A, SET_B, TIME a DIV. Umožňuje nastavenie času budenia, zobrazenie nastaveného času v bloku ALARM a slúži ako                     jeden z indikátorov stavu pre bloky TIME a DIV|
-| SW2   | SW2    | Prepínač SW2 využívajú bloky SET_A, SET_B, TIME a DIV. Umožňuje nastavenie času hodín, zobrazenie nastaveného času v bloku TIME a slúži ako                        jeden z indikátorov stavu pre bloky TIME a DIV|
+| SW1   | SW1    | Prepínač SW1 využívajú bloky SET_A, SET_B a TIME. Umožňuje nastavenie času budenia, zobrazenie nastaveného času v bloku ALARM a slúži ako                          jeden z indikátorov stavu pre blok TIME|
+| SW2   | SW2    | Prepínač SW2 využívajú bloky SET_A, SET_B a TIME. Umožňuje nastavenie času hodín, zobrazenie nastaveného času v bloku TIME a slúži ako                             jeden z indikátorov stavu pre blok TIME|
 | E3    | CLK    | Jedná sa o interný signál s frekvenciou 100MHz|
 
 | Výstup | Signál | Popis |
