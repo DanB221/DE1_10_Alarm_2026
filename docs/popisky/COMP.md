@@ -5,6 +5,6 @@
 
 
 ### **Odkazy**
-[VHDL kód](../Alarm/Alarm.srcs/sources_1/new/COMP.vhd) |
+[VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/COMP.vhd) |
 [Testbench]() | 
 [Simulácia]() 
