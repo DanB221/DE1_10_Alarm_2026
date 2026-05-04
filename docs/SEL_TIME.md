@@ -1,5 +1,7 @@
-Vstupy : BTNU, BTND, BTNC, CLK, RST
-Výstupy: BTNU_H, BTND_H, BTNU_M, BTND_M, BTNU_S, BTND_S, STAV
+|  |  |  |  |  |  |  |  | 
+|---|---|---|---|---|---|---|---|
+| Vstupy | CLK | RST | BTNU | BTND | BTNC |  |  |  
+| Výstupy | BTNU_H | BTND_H | BTNU_M | BTND_M | BTNU_S | BTND_S | STAV[1:0] | 
 
 Daný blok priradí vstupy na príslučné H/M alebo S výstupy na základe stlačenie BTN_C. Takže defaultne bude stav na H(hodinách)(00), stlčením BTNC sa posunie 
 stav na (01) a výstup bude na M (minútach)
