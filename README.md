@@ -21,18 +21,18 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 ![Scheme](docs/Schema_v5.jpeg)
 
 ## Popis blokovej schémy
-Bloková schéma respektíve top level odsahuje následné vstupy a výstupy.
+Bloková schéma respektíve top level obsahuje nasledujúce vstupy, výstupy a jednotlivé bloky popísané v nasledujúcej kapitole.
 
 | Vstup | Signál | Popis |
 |---    |---     |---|
-| BTNU  | BTNU   | |
-| BTND  | BTND   | |
-| BTNC  | BTNC   | |
-| BTNR  | RST    | |
-| SW0   | SW0    | |
-| SW1   | SW1    | |
-| SW2   | SW2    | |
-| E3    | CLK    | |
+| BTNU  | BTNU   | Tlačidlo BTNU respektíve "hore" sa využíva pre nastavenie počítadiel v bloku TIME a ALARM v prípade ak je zapnuté nastavovanie pre niektorý z                      nich|
+| BTND  | BTND   | Tlačidlo BTND respektíve "dole" sa využíva pre nastavenie počítadiel v bloku TIME a ALARM v prípade ak je zapnuté nastavovanie pre niektorý z                      nich|
+| BTNC  | BTNC   | Tlačidlo BTNC respektíve "stred" sa využíva pre odloženie pípania v bloku COMP za podmienky, že pípanie začalo|
+| BTNR  | RST    | Tlačidlo BTNR respektíve "vpravo" sa využíva pre centrálny reset zapojenia| 
+| SW0   | SW0    | Prepínač SW0 sa využíva pre blok COMP a zapína budík respektíve porovnávanie hodnôt počítadiel medzi blokmi TIME a ALARM|
+| SW1   | SW1    | Prepínač SW1 využívajú bloky SET_A, SET_B, TIME a DIV. Umožňuje nastavenie času budenia, zobrazenie nastaveného času v bloku ALARM a slúži ako                     jeden z indikátorov stavu pre bloky TIME a DIV|
+| SW2   | SW2    | Prepínač SW2 využívajú bloky SET_A, SET_B, TIME a DIV. Umožňuje nastavenie času hodín, zobrazenie nastaveného času v bloku TIME a slúži ako                        jeden z indikátorov stavu pre bloky TIME a DIV|
+| E3    | CLK    | Jedná sa o interný signál s frekvenciou 100MHz|
 
 | Výstup | Signál | Popis |
 |---     |---     |---|
