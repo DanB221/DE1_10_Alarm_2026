@@ -1,8 +1,10 @@
+
+
 # Projekt z DE1
 V rámci výuky predmetu sme si zvolili tému číslo 10 ALARM. 
 
 ## Videoukázka
-![Video](docs/VideoukazkaDE1.mp4)
+https://github.com/user-attachments/assets/87948d0f-74f2-4923-8dd3-1b2ef538136f
 
 ## Popis alarmu a funkcionality
 Nami navrhnutý alarm respektíve budík v základnom stave zobrazuje čas a aktuálny stav alarmu. Vieme samostatne nastavovať čas hodín, čas alarmu, vypínať a zapínať budík prípadne odkladať začaté budenie. Počas nastavovania jednotlivé práve navolené čislice blikajú a je zablokovaný presun do vyššieho radu takže pri prejdení hranice napríklad 59 minút sa ďalším nastavovaním vyššieho čísla nepridá minúta, iba sa minúty vynulujú. Ak náhodou nastane prípad, že niekto navolí súbežne nastavenie hodín aj alarmu, celý projekt ostane v základnom stave.
