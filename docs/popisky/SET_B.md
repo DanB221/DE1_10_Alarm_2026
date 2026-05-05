@@ -1,6 +1,6 @@
 |  |  |  |  |  |  |  |  |  |  |  |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Vstupy | SW1 | SW2 | STAV_TIME[1:0] | STAV_ALM[1:0] | HH[5:0] | MM[5:0] | SS[5:0] | HH_A[5:0] | MM_A[5:0] | SS_A[5:0] |  
+| Vstupy | HH[5:0] | MM[5:0] | SS[5:0] | HH_A[5:0] | MM_A[5:0] | SS_A[5:0] | SW1 | SW2 | STAV_TIME[1:0] | STAV_ALM[1:0] | 
 | Výstupy | H[5:0] | M[5:0] | S[5:0] | STAV[1:0] |  |  |  |  |  |  | 
 
 Blok SET_B slúži na výber vetvy, ktorá bude ďalej odoslaná na zobrazovanie. Na vstup prijíma aktuálny čas HH, MM, SS, alarmový čas HH_A, MM_A, SS_A a tiež stavové signály STAV_TIME a STAV_ALM. Na základe vstupov z SW1 a SW2 rozhoduje, či sa na výstup odošlú hodnoty času alebo hodnoty alarmového času.
