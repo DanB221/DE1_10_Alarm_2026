@@ -44,10 +44,10 @@ Bloková schéma respektíve [top level](Alarm/Alarm.srcs/sources_1/new/ALARM_to
 
 
 ## Popis jednotlivých blokov
-| [DEB](docs/popisky/DEB.md)      | [SET_A](docs/popisky/SET_A.md) | [SEL_TIME](docs/popisky/SEL_TIME.md) | [SEL_ALM](docs/popisky/SEL_ALM.md) 
-| [TIME](docs/popisky/TIME.md)    | [ALARM](docs/popisky/ALARM.md) | [clk_en](docs/popisky/clk_en.md)     | [COMP](docs/popisky/COMP.md) 
-| [SET_B](docs/popisky/SET_B.md)  | [DIV](docs/popisky/DIV.md)     | [SEL](docs/popisky/SEL.md)           | [bin2seg](docs/popisky/bin2seg.md) 
-| [driver](docs/popisky/driver.md)|
+| [DEB](docs/popisky/DEB.md)       | [SET_A](docs/popisky/SET_A.md) | [SEL_TIME](docs/popisky/SEL_TIME.md) | [SEL_ALM](docs/popisky/SEL_ALM.md) 
+| [TIME](docs/popisky/TIME.md)     | [ALARM](docs/popisky/ALARM.md) | [clk_en](docs/popisky/clk_en.md)     | [COMP](docs/popisky/COMP.md) 
+| [SET_B](docs/popisky/SET_B.md)   | [DIV](docs/popisky/DIV.md)     | [SEL](docs/popisky/SEL.md)           | [bin2seg](docs/popisky/bin2seg.md) 
+| [driver](docs/popisky/driver.md) |
 
 
 >## Autori
