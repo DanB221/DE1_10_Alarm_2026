@@ -21,7 +21,7 @@ Po začatí budenia sa zapne externý bzučiak. Alarm vieme presunúť o 5 minú
 ![Scheme](docs/Schema_v5.jpeg)
 
 ## Popis blokovej schémy
-Bloková schéma respektíve [top level](../../Alarm/Alarm.srcs/sources_1/new/ALARM_top.vhd) obsahuje nasledujúce vstupy, výstupy a jednotlivé bloky popísané v nasledujúcej kapitole.
+Bloková schéma respektíve [top level](Alarm/Alarm.srcs/sources_1/new/ALARM_top.vhd) obsahuje nasledujúce vstupy, výstupy a jednotlivé bloky popísané v nasledujúcej kapitole.
 
 | Vstup | Signál | Popis |
 |---    |---     |---|
