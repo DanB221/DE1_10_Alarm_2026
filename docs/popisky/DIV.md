@@ -8,5 +8,5 @@ Blok DIV slúži na rozdelenie aktuálnych hodnôt hodín, minút a sekúnd na j
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/DIV.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/DIV/DIV_tb.vhd) | 
+[Simulácia](../../docs/TB/DIV/DIV.PNG) 
