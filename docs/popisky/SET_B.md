@@ -9,5 +9,5 @@ Ak je aktívny režim alarmu, blok na výstupy H, M a S odošle hdnoty s indexom
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/SET_B.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/SET_B/SET_B_tb.vhd) | 
+[Simulácia](../../docs/TB/SET_B/SET_B.PNG) 
