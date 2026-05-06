@@ -9,5 +9,5 @@ Celý blok je navrhnutý ako synchronný sekvenčný obvod riadený hlavným hod
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/COMP.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/COMP/COMP_tb.vhd) | 
+[Simulácia](../../docs/TB/COMP/COMP.PNG) 
