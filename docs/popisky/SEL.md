@@ -8,5 +8,5 @@ Blok SEL slúži na výber jednotlivých číslic pre mux zobrazenie na 7-segmen
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/SEL.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/SEL/SEL_tb.vhd) | 
+[Simulácia](../../docs/TB/SEL/SEL.PNG) 
