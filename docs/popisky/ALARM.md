@@ -8,5 +8,5 @@ Blok ALARM slúži na uchovávanie nastaveného alarmového času vo forme hodí
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/ALARM.vhd) |
-[Testbench]() |
-[Simulácia]() 
+[Testbench](../../docs/TB/ALARM/ALARM_tb.vhd) |
+[Simulácia](../../docs/TB/ALARM/ALARM.PNG) 
