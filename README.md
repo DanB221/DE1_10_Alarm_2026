@@ -50,7 +50,7 @@ Bloková schéma respektíve [top level](Alarm/Alarm.srcs/sources_1/new/ALARM_to
 | [SET_B](docs/popisky/SET_B.md)   | [DIV](docs/popisky/DIV.md)     | [SEL](docs/popisky/SEL.md)           | [bin2seg](docs/popisky/bin2seg.md) 
 | [driver](docs/popisky/driver.md) |
 
-## Videoukázka
+## Videoukážka
 https://github.com/user-attachments/assets/87948d0f-74f2-4923-8dd3-1b2ef538136f
 
 >## Autori
