@@ -8,5 +8,5 @@ Blok SET_A slúži na smerovanie impulzov z tlačidiel do správnej vetvy systé
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/SET_A.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/SET_TIME/SET_TIME_tb.vhd) | 
+[Simulácia](../../docs/TB/SET_TIME/SET_TIME.PNG) 
