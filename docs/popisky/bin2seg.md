@@ -6,5 +6,5 @@
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/bin2seg.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/bin2seg/bin2seg_tb.vhd) | 
+[Simulácia](../../docs/TB/bin2seg/bin2seg.PNG) 
