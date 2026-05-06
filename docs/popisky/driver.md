@@ -6,5 +6,5 @@
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/driver.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/driver/driver_tb.vhd) | 
+[Simulácia](../../docs/TB/driver/driver.PNG) 
