@@ -9,5 +9,5 @@ Blok po resete začína v režime nastavovania hodín alarmu. Každým impulzom 
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/SEL_ALM.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/SEL_TIME_ALM/SEL_TIME_ALM_tb.vhd) | 
+[Simulácia](../../docs/TB/SEL_TIME_ALM/SEL_TIME_ALM.PNG) 
