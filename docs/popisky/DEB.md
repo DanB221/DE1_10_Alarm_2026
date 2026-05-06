@@ -8,5 +8,5 @@ Blok DEB slúži na odfiltrovanie zákmitov tlačidiel a na vytvorenie krátkych
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/DEB.vhd) |
-[Testbench](../../docs/TB/DEB/DEB_tb) | 
+[Testbench](../../docs/TB/DEB/DEB_tb.vhd) | 
 [Simulácia](../../docs/TB/DEB/DEB.PNG) 
