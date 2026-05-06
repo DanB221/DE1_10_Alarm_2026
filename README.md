@@ -56,4 +56,4 @@ https://github.com/user-attachments/assets/87948d0f-74f2-4923-8dd3-1b2ef538136f
 >## Autori
 >**Daniel Bačovčin** - návrh, top level, GitHub, práca na jednotlivých blokoch
 >
->**Adam Zabloudil** - simulácie, poster, práca na jednotlivých blokoch
+>**Adam Zabloudil** - simulácie, poster, video, práca na jednotlivých blokoch
