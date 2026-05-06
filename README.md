@@ -53,6 +53,9 @@ Bloková schéma respektíve [top level](Alarm/Alarm.srcs/sources_1/new/ALARM_to
 ## Videoukážka
 https://github.com/user-attachments/assets/87948d0f-74f2-4923-8dd3-1b2ef538136f
 
+## Poster
+[poster_v2.pdf](https://github.com/user-attachments/files/27459466/poster_v2.pdf)
+
 >## Autori
 >**Daniel Bačovčin** - návrh, top level, GitHub, práca na jednotlivých blokoch
 >
