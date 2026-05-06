@@ -8,5 +8,5 @@ Blok TIME slúži ako hodiny, ktoré poznajú hodiny minúty a sekundy. Na vstup
 
 ### **Odkazy**
 [VHDL kód](../../Alarm/Alarm.srcs/sources_1/new/TIME.vhd) |
-[Testbench]() | 
-[Simulácia]() 
+[Testbench](../../docs/TB/TIME/TIME_tb.vhd) | 
+[Simulácia](../../docs/TB/TIME/TIME.PNG) 
